@@ -1,3 +1,6 @@
 {
-  "mongoURI": "mongodb+srv://tcollins:Sugarbone1433@veganize-1esve.mongodb.net/test?retryWrites=true&w=majority"
+  "mongoURI": "mongodb+srv://tcollins:Sugarbone1433@veganize-1esve.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken",
+  "githubClientId": "29ea5ece845aee9d9757",
+  "githubSecret": "4176a6aa34554e860be9d1759a47879c3dd0e397"
 }

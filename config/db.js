@@ -1,5 +1,9 @@
 //this is where we are setting up the mongodb connection
 const mongoose = require('mongoose');
+//grabbed below from docs to get red of an error
+// mongoose.set('useFindAndModify', false);
+// mongoose.set('useNewUrlParser', true);
+
 //bringing in the mongodb string from the config file
 const config = require('config');
 const db = config.get('mongoURI');
@@ -8,8 +12,13 @@ const db = config.get('mongoURI');
 // calling our server.js
 const connectDB = async () => {
   try {
-    await mongoose.connect(db);
-    console.log('MondoDB Connected ...');
+    await mongoose.connect(db, {
+      useNewUrlParser: true,
+      useCreateIndex: true,
+      useFindAndModify: false
+    });
+
+    console.log('MongoDB Connected ...');
   } catch (err) {
     console.error(err.message);
     // Exit process with failure
